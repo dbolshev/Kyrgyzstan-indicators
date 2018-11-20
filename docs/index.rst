@@ -1,6 +1,6 @@
 .. toctree::
    :maxdepth: 2
-   :caption: Зміст:
+   :caption: Содержание:
 
    indicators
    transactional_variables
