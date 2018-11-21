@@ -8,7 +8,7 @@ Welcome to KRAI indicators's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Содержание:
 
    indicators
    transactional_variables
