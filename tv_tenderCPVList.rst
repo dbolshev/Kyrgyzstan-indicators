@@ -1,4 +1,4 @@
-.. _tv_tenderCPVList
+.. _tv_tenderCPVList:
 
 ================
 tv_tenderCPVList
