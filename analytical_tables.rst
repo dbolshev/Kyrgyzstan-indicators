@@ -6,3 +6,4 @@
    :caption: Список аналитических таблиц:
 
   tbl_reportOneTime
+  tbl_reportCPV
