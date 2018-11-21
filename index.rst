@@ -13,10 +13,3 @@ Welcome to KRAI indicators's documentation!
    indicators
    transactional_variables
    analytical_tables
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
