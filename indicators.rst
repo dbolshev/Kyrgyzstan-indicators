@@ -11,3 +11,6 @@
    KRAI3
    KRAI4
    KRAI5
+   KRAI6
+   KRAI7
+   KRAI8
