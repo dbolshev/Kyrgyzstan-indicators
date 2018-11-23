@@ -7,3 +7,4 @@
 
   tbl_reportOneTime
   tbl_reportCPV
+  tbl_CPVByOpenTender
