@@ -17,3 +17,4 @@
    KRAI9
    KRAI10
    KRAI11
+   KRAI12
