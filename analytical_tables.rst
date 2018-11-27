@@ -11,3 +11,4 @@
   tbl_CPVMeanPrice
   tbl_activeCPV
   tbl_PEOpenTenders
+  tbl_CPVqualifRequir
