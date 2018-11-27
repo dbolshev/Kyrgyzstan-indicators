@@ -30,3 +30,4 @@
    KRAI22
    KRAI23
    KRAI24
+   KRAI25
