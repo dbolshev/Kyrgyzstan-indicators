@@ -25,3 +25,4 @@
    KRAI17
    KRAI18
    KRAI19
+   KRAI20

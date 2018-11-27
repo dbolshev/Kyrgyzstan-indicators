@@ -10,3 +10,4 @@
   tbl_CPVByOpenTender
   tbl_CPVMeanPrice
   tbl_activeCPV
+  tbl_PEOpenTender
