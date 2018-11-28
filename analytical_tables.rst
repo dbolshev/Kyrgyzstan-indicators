@@ -13,3 +13,4 @@
   tbl_PEOpenTenders
   tbl_CPVqualifRequir
   tbl_CPVLicence
+  tbl_CPVOneSupplier

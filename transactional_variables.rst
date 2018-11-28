@@ -6,3 +6,4 @@
    :caption: Список транзакционных переменных:
 
    tv_tenderCPVList
+   tv_tenderCPV
