@@ -34,3 +34,4 @@
    KRAI26
    KRAI27
    KRAI28
+   KRAI29
