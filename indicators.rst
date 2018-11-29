@@ -32,4 +32,4 @@
    KRAI24
    KRAI25
    KRAI26
-   
+   KRAI27
