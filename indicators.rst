@@ -37,3 +37,4 @@
    KRAI29
    KRAI30
    KRAI31
+   KRAI32
