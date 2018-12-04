@@ -69,7 +69,7 @@ KRAI9. Не правомерное применение закупки мето�
 Для расчета индикатора используются следующие поля API модуля системы гос. закупок:
 
 - ``data.tender.procurementMethodRationale``
-- ``data.tender.procurementMethodDetails``
+- ``data.tender.procurementMethodRationale``
 - ``data.tender.items.classification.scheme``
 - ``data.tender.items.classification.id``
 
