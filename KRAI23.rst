@@ -76,6 +76,7 @@ KRAI23. Закупающая организация запросила слиш�
 Для расчета индикатора используются следующие поля API модуля системы гос. закупок:
 
 - ``data.qualificationRequirements.id``
+- ``data.qualificationRequirements.type``
 - ``data.items.classification.id``
 - ``data.items.classification.scheme``
 
