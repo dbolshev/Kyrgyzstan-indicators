@@ -88,7 +88,7 @@ KRAI26. Применение закупки методом прямого зак
 Формула расчета
 ===============
 
-1. Выбираем только те процедуры, у которых ``data.tender.procurementMethodRationale = 'PROC_ONCE_IN_A_YEAR'``. И только процедуры на поставку товаров.
+1. Выбираем только те процедуры, у которых ``data.tender.procurementMethodRationale = 'annualProcurement'``. И только процедуры на поставку товаров.
 2. Находим идентификатор закупающей организации (конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``), такой, что ``data.parties.roles = 'buyer, procuringEntity'``.
 3. Определяем дату объявления процедуры ``data.date``.
 4. Выбираем все объекты определения победителя, которые имеют ``data.awards.status = 'active'``.
