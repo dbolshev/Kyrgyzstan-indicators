@@ -77,7 +77,7 @@ KRAI9. Не правомерное применение закупки мето�
 Формула расчета
 ===============
 
-1. Выбираем только процедуры, у которых ``data.tender.procurementMethodRationale = 'PROC_OF_INTELLECTUAL_OR_EXCLUSIVE_RIGHTS'``.
+1. Выбираем только процедуры, у которых ``data.tender.procurementMethodRationale = 'intellectualRights'``.
 
 2. Из контейнеров ``data.items`` выбираем все коды предметов закупок (конкатенация ``data.tender.items.classification.scheme`` и ``data.tender.items.classification.id``).
 
