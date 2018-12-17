@@ -7,3 +7,4 @@
 
    tv_tenderCPVList
    tv_tenderCPV
+   tv_badDataQuality
