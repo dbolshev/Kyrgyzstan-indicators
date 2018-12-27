@@ -57,7 +57,7 @@ tbl_PESupplier
 
 1. Перед расчетом таблица очищается.
 2. Выбираем только процедуры, ``data.tender.procurementMethod = 'open'``.
-3. Выбираем только завершенные процедуры ``data.tender.status = 'contractSigned'`` или те, что находятся в статусе ``evaluationComplete`` более 30 дней.
+3. Выбираем только завершенные процедуры ``data.tender.status = 'complete'`` или те, что находятся в статусе ``data.tender.status = 'active'``, но имеют ``currentStage = 'evaluationComplete'`` более 30 дней.
 4. В исследуемой процедуре выбираем всех поставщиков-победителей, таких ``data.parties``, у которых ``data.parties.roles = 'supplier'``.
 5. Выбираем их идентификаторы - конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``.
 6. Выбираем идентификатор закупающей организации (конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``), такой, для которого ``data.parties.roles = 'buyer, procuringEntity'``.
