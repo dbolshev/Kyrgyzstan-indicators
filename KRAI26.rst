@@ -79,7 +79,7 @@ KRAI26. Применение закупки методом прямого зак
 - ``data.parties.roles``
 - ``data.parties.identifier.scheme``
 - ``data.parties.identifier.id``
-- ``data.date``
+- ``data.tender.datePublished``
 - ``data.awards.status``
 - ``data.awards.relatedBid``
 - ``data.bids.details.priceProposal.relatedItem``
@@ -95,7 +95,7 @@ KRAI26. Применение закупки методом прямого зак
 
 1. Выбираем только те процедуры, у которых ``data.tender.procurementMethodRationale = 'annualProcurement'``. И только процедуры на поставку товаров.
 2. Находим идентификатор закупающей организации (конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``), такой, что ``data.parties.roles = 'buyer, procuringEntity'``.
-3. Определяем дату объявления процедуры ``data.date``.
+3. Определяем дату объявления процедуры ``data.tender.datePublished``.
 4. Выбираем все объекты определения победителя, которые имеют ``data.awards.status = 'active'``.
 5. Выбираем ценовое предложение, которое победило в определении победителя ``data.bids.id = data.awards.relatedBid``.
 6. В ценовом предложении находим идентификатор предметов закупки ``data.bids.details.priceProposal.relatedItem`` и стоимости единиц предметов закупки ``data.bids.details.priceProposal.unit.value.amount``.
