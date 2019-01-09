@@ -54,7 +54,7 @@ tbl_CPVqualifRequir
 ***********************
 
 1. Перед расчетом таблица очищается.
-2. Выбираем только процедуры, ``data.tender.procurementMethod = 'open'``. Из них выбираем процедуры, у которых ``date`` отстоят на год или менее от даты в поле ``date`` исследуемой процедуры.
+2. Выбираем только процедуры, ``data.tender.procurementMethod = 'open'``. Из них выбираем процедуры, у которых ``data.tender.datePublished`` отстоят на год или менее от даты в поле ``data.tender.datePublished`` исследуемой процедуры.
 3. Выбираем только завершенные процедуры ``data.tender.status = 'complete'``.
 4. выбираем все коды предметов закупок (конкатенация ``data.tender.items.classification.scheme`` и ``data.tender.items.classification.id``).
 5. Считаем количество квалификационных требований - элементов ``data.qualificationRequirements.id``.
