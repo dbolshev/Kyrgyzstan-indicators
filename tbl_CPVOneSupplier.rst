@@ -46,12 +46,11 @@ tbl_tbl_CPVOneSupplier
 Поля для расчета
 ****************
 
-- ``date``
+- ``data.tender.datePublished``
 - ``data.tender.procurementMethodRationale``
 - ``data.parties.roles``
 - ``data.parties.identifier.scheme``
 - ``data.parties.identifier.id``
-- ``data.date``
 - ``data.awards.status``
 - ``data.awards.relatedBid``
 - ``data.bids.details.priceProposal.relatedItem``
@@ -66,9 +65,9 @@ tbl_tbl_CPVOneSupplier
 Формула расчета таблицы
 ***********************
 1. Перед расчетом таблица очищается.
-2. Выбираем только те процедуры, у которых ``data.tender.procurementMethodRationale = 'PROC_ONCE_IN_A_YEAR'``. И только процедуры на поставку товаров. Из них выбираем только те процедуры, у которых ``date`` находится в текущем году.
+2. Выбираем только те процедуры, у которых ``data.tender.procurementMethodRationale = 'PROC_ONCE_IN_A_YEAR'``. И только процедуры на поставку товаров. Из них выбираем только те процедуры, у которых ``data.tender.datePublished`` находится в текущем году.
 3. Находим идентификатор закупающей организации (конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``), такой, что ``data.parties.roles = 'buyer, procuringEntity'``.
-4. Определяем дату объявления процедуры ``data.date``.
+4. Определяем дату объявления процедуры ``data.tender.datePublished``.
 5. Выбираем все объекты определения победителя, которые имеют ``data.awards.status = 'active'``.
 6. Выбираем ценовое предложение, которое победило в определении победителя ``data.bids.id = data.awards.relatedBid``.
 7. В ценовом предложении находим идентификатор предметов закупки ``data.bids.details.priceProposal.relatedItem`` и стоимости единиц предметов закупки ``data.bids.details.priceProposal.unit.value.amount``.
