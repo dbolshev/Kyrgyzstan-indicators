@@ -56,7 +56,7 @@ tbl_CPVByOpenTender
 
 1. Перед расчетом таблица очищается.
 2. Выбираем только процедуры, ``data.tender.procurementMethod = 'open'``, у которых ``data.tender.datePublished`` находится в текущем году.
-3. Выбираем только завершенные процедуры ``data.tender.status = 'contractSigned'``.
+3. Выбираем только завершенные процедуры ``data.tender.status = 'complete'``.
 4. Из выбранных процедур выбираем все блоки определения победителя, где ``data.awards.status = 'active'``.
 5. Из блоков определения победителя выбираем идентификаторы лотов, к которым относятся эти блоки ``data.awards.relatedLot``.
 6. Находим все ``data.items``, которые относятся к этим лотам ``data.awards.relatedLot = data.items.relatedLot``.
