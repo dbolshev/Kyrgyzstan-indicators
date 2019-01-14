@@ -76,7 +76,7 @@ KRAI31. Незавершенная процедура - закупающая о�
 
 - ``data.tender.date``
 - ``data.tender.status``
-- ``data.tender.procurementMethodDelails``
+- ``data.tender.currentStage``
 
 Качество данных
 ===============
