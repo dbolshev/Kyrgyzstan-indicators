@@ -53,12 +53,13 @@ tbl_reportOneTime
 - ``parties.id``
 - ``parties.roles``
 - ``data.tender.datePublished``
+- ``data.tender.status``
 
 ***********************
 Формула расчета таблицы
 ***********************
 1. Перед расчетом таблица очищается.
-2. Выбираем только процедуры, ``data.tender.procurementMethodRationale = 'annualProcurement'``, у которых ``data.tender.datePublished`` находится в текущем году.
+2. Выбираем только процедуры, ``data.tender.procurementMethodRationale = 'annualProcurement'``, у которых ``data.tender.datePublished`` находится в текущем году и ``data.tender.status = 'complete'``.
 3. Из каждой найденной процедуры извлекаем идентификатор закупающей организации ``parties.id``, такой что ``parties.roles = 'buyer, procuringEntity'``.
 4. Извлекаем дату оглашения процедуры ``date``.
 5. Извлекаем все предметы закупок (конкатенация ``data.tender.items.classification.scheme`` и ``data.tender.items.classification``).
