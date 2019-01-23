@@ -8,7 +8,7 @@ tbl_PESupplier
 Данная аналитическая таблица содержит следующую информацию:
  - Идентификатор поставщика.
  - Идентификатор закупающей организации.
- - Дату оглашения процедуры.
+ - Дату завершения процедуры.
  
 Пример того, как может выглядеть таблица:
 
@@ -49,7 +49,7 @@ tbl_PESupplier
 - ``data.parties.identifier.scheme``
 - ``data.parties.identifier.id``
 - ``data.parties.roles``
-- ``data.tender.datePublished``
+- ``data.tender.date``
 
 ***********************
 Формула расчета таблицы
@@ -61,5 +61,5 @@ tbl_PESupplier
 4. В исследуемой процедуре выбираем всех поставщиков-победителей, таких ``data.parties``, у которых ``data.parties.roles = 'supplier'``.
 5. Выбираем их идентификаторы - конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``.
 6. Выбираем идентификатор закупающей организации (конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``), такой, для которого ``data.parties.roles = 'buyer, procuringEntity'``.
-7. Выбираем дату оглашения процедуры ``data.tender.datePublished``.
+7. Выбираем дату завершения процедуры ``data.tender.date``.
 8. Полученные результаты записываем в таблицу.
