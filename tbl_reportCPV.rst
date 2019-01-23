@@ -46,6 +46,8 @@ tbl_reportCPV
 Поля для расчета
 ****************
 
+- ``data.tender.status``
+- ``data.tender.procurementMethodDetails``
 - ``data.tender.items.classification.scheme``
 - ``data.tender.items.classification.id``
 - ``parties.id``
@@ -57,6 +59,7 @@ tbl_reportCPV
 Формула расчета таблицы
 ***********************
 1. Перед расчетом таблица для текущего календарного года очищается. Таблицы, посчитанные для более ранних годов, остаются без изменений.
+2. Для расчета берем процедуры, у которых ``data.tender.status = 'complete'`` и ``data.tender.procurementMethodDetails = 'singleSource'``
 2. Для расчета берем те процедуры, у которых ``data.tender.datePublished`` находится в текущем году.
 3. Из каждой найденной процедуры извлекаем идентификатор закупающей организации ``parties.id``, такой что ``parties.roles = 'buyer, procuringEntity'``.
 4. Извлекаем дату завершения процедуры ``data.tender.date``.
