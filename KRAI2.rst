@@ -75,8 +75,9 @@ KRAI2. Дробление. Заключение прямого договора 
 Для расчета индикатора используются следующие поля API модуля системы гос. закупок:
 
 - ``data.tender.status``
-- ``data.tender.items.classification.scheme``
 - ``data.tender.items.classification.id``
+- ``data.tender.items.relatedLot``
+- ``data.tender.lots.status``
 - ``parties.id``
 - ``parties.roles``
 - ``data.tender.datePublished``
@@ -95,7 +96,7 @@ KRAI2. Дробление. Заключение прямого договора 
 
 1. Выбираем только процедуры, которые оглашены в текущем году.
 
-2. Выбираем все значения классификаторов из текущей процедуры (конкатенация полей ``data.tender.items.classification.scheme`` и ``data.tender.items.classification.id``).
+2. Выбираем все значения классификаторов из текущей процедуры (``data.tender.items.classification.id``) только из тех лотов, у которых ``data.tender.lots.status = 'complete'``.
 
 3. Выбираем идентификатор закупающей организации:  ``parties.id``, для которой ``parties.roles = 'buyer, procuringEntity'``.
 
