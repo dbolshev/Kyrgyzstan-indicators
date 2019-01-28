@@ -96,7 +96,7 @@ KRAI2. Дробление. Заключение прямого договора 
 
 1. Выбираем только процедуры, которые оглашены в текущем году.
 
-2. Выбираем все значения классификаторов из текущей процедуры (``data.tender.items.classification.id``) только из тех лотов, у которых ``data.tender.lots.status = 'complete'``.
+2. Выбираем все значения классификаторов из текущей процедуры (``data.tender.items.classification.id``) только из тех лотов (``data.tender.items.relatedLot = data.tender.lots.id``), у которых ``data.tender.lots.status = 'complete'``.
 
 3. Выбираем идентификатор закупающей организации:  ``parties.id``, для которой ``parties.roles = 'buyer, procuringEntity'``.
 
