@@ -71,6 +71,9 @@ KRAI1. Повторная закупка методом прямого закл�
 Для расчета индикатора используются следующие поля API модуля системы гос. закупок:
 
 - ``data.tender.procurementMethodRationale``
+- ``data.tender.items.relatedLot``
+- ``data.tender.lots.id``
+- ``data.tender.lots.status``
 - ``data.tender.items.classification.scheme``
 - ``data.tender.items.classification.id``
 - ``data.parties.id``
@@ -96,7 +99,7 @@ KRAI1. Повторная закупка методом прямого закл�
 
 1. Выбираем только процедуры, ``data.tender.procurementMethodRationale = 'annualProcurement'``.
 
-2. Выбираем все значения классификаторов из текущей процедуры (конкатенация полей ``data.tender.items.classification.scheme`` и ``data.tender.items.classification.id``).
+2. Выбираем все значения классификаторов из текущей процедуры (``data.tender.items.classification.id``) только из тех лотов, у которых ``data.tender.lots.status = 'complete'``.
 
 3. Выбираем идентификатор закупающей организации:  ``parties.id``, для которой ``parties.roles = 'buyer, procuringEntity'``.
 
