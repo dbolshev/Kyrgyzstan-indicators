@@ -65,14 +65,14 @@ tbl_tbl_CPVOneSupplier
 Формула расчета таблицы
 ***********************
 1. Перед расчетом таблица для текущего календарного года очищается. Таблицы, расчитанные для более ранних годов остаются без пересчета.
-2. Выбираем только те процедуры, у которых ``data.tender.procurementMethodRationale = 'PROC_ONCE_IN_A_YEAR'``. И только процедуры на поставку товаров. Из них выбираем только те процедуры, у которых ``data.tender.datePublished`` находится в текущем году.
+2. Выбираем только те процедуры, у которых ``data.tender.procurementMethodRationale = 'annualProcurement'``. И только процедуры на поставку товаров. Из них выбираем только те процедуры, у которых ``data.tender.datePublished`` находится в текущем году.
 3. Находим идентификатор закупающей организации (конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``), такой, что ``data.parties.roles = 'buyer, procuringEntity'``.
-4. Определяем дату объявления завершения ``data.tender.date``.
+4. Определяем дату завершения процедуры ``data.tender.date``.
 5. Выбираем все объекты определения победителя, которые имеют ``data.awards.status = 'active'``.
 6. Выбираем ценовое предложение, которое победило в определении победителя ``data.bids.id = data.awards.relatedBid``.
 7. В ценовом предложении находим идентификатор предметов закупки ``data.bids.details.priceProposal.relatedItem`` и стоимости единиц предметов закупки ``data.bids.details.priceProposal.unit.value.amount``.
 8. По идентификатору предмета закупки находим позицию в тендерном объявлении ``data.bids.details.priceProposal.relatedItem = data.tender.items.id``.
-9. Из позиции в тендерном предложении находим код предмета закупки (конкатенация ``data.tender.items.classification.scheme`` и ``data.tender.items.classification.id``) а также количество закупаемых единиц ``data.tender.items.quantity``.
+9. Из позиции в тендерном предложении находим код предмета закупки (``data.tender.items.classification.id``) а также количество закупаемых единиц ``data.tender.items.quantity``.
 10. Находим категорию для предмета закупки - первые 6 знаков в коде.
 11. Находим сумму по предмету закупки: количество ``data.tender.items.quantity`` умножаем на стоимость ``data.bids.details.priceProposal.unit.value.amount``.
 12. Идентификатор закупающей организации, идентификатор поставщика, категорию предмета закупки, сумму закупки, дату завершения процедуры и год, для которого считалась таблица, заносим в таблицу.
