@@ -34,10 +34,14 @@ tv_tenderCPVList
 Поля для расчета
 ****************
 
+- ``data.tender.items.relatedLot``
+- ``data.tender.lots.id``
+- ``data.tender.lots.status``
 - ``data.tender.items.classification.id``
 
 ***************
 Формула расчета
 ***************
 
-Все значения ``data.tender.items.classification.id`` из процедуры заносятся в список.
+
+Все значения ``data.tender.items.classification.id`` из объектов ``data.tender.items``, которые ссылаются только на лоты (``data.tender.items.relatedLot = data.tender.lots.id``), у которых ``data.tender.lots.status = 'complete'`` или ``data.tender.lots.status = 'active'``.
