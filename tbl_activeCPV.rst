@@ -52,6 +52,10 @@ tbl_activeCPV
 - ``data.parties.roles``
 - ``data.parties.identifier.scheme``
 - ``data.parties.identifier.id``
+- ``data.tender.items.classification.id``
+- ``data.tender.items.relatedLot``
+- ``data.tender.lots.id``
+- ``data.tender.lots.status``
 
 ***********************
 Формула расчета таблицы
@@ -60,6 +64,6 @@ tbl_activeCPV
 2. Выбираем только процедуры проводимые одноэтапным методом, упрощенным методом или методом на понижение цены, дата оглашения которых ``data.tender.datePublished`` находится в промежутке от начала текущего календарного года до текущей даты.
 3. Из найденных процедур берем только те, которые имеют ``data.tender.currentStage = 'bidsOpened'`` или ``data.tender.currentStage = 'evaluationResultsPending'``.
 4. Определяем идентификатор закупающей организации (конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``) элемента ``data.parties``, у которого ``data.parties.roles = 'buyer, procuringEntity'``.
-5. Из выбранных процедур берем их переменные :ref:`tv_tenderCPVList`. Разделяем переменную на отдельные коды предметов закупки.
+5. Из выбранных процедур берем их ``data.tender.items.classification.id`` из активных или завершенных лотов (``data.tender.items.relatedLot = data.tender.lots.id``, у которых ``data.tender.lots.status = 'active'`` или ``data.tender.lots.status = 'complete'``). 
 6. Группируем получившиеся данные по идентификатору закупающей организации и коду предмета закупки, выбирая самую раннюю дату для каждого предмета закупки.
 7. Полученные данные вместе с годом, для которого расчитывалась таблица, заносим в таблицу.
