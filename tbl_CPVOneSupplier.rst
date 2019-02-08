@@ -55,6 +55,7 @@ tbl_tbl_CPVOneSupplier
 - ``data.awards.relatedBid``
 - ``data.bids.details.priceProposal.relatedItem``
 - ``data.bids.details.priceProposal.unit.value.amount``
+- ``data.bids.tenderers.id``
 - ``data.tender.bids.id``
 - ``data.tender.items.id``
 - ``data.tender.items.quantity``
@@ -70,7 +71,7 @@ tbl_tbl_CPVOneSupplier
 4. Определяем дату завершения процедуры ``data.tender.date``.
 5. Выбираем все объекты определения победителя, которые имеют ``data.awards.status = 'active'``.
 6. Выбираем ценовое предложение, которое победило в определении победителя ``data.bids.id = data.awards.relatedBid``.
-7. В ценовом предложении находим идентификатор предметов закупки ``data.bids.details.priceProposal.relatedItem`` и стоимости единиц предметов закупки ``data.bids.details.priceProposal.unit.value.amount``.
+7. В ценовом предложении находим идентификатор предметов закупки ``data.bids.details.priceProposal.relatedItem`` и стоимости единиц предметов закупки ``data.bids.details.priceProposal.unit.value.amount``` и идентификатор поставщика ``data.bids.tenderers.id``.
 8. По идентификатору предмета закупки находим позицию в тендерном объявлении ``data.bids.details.priceProposal.relatedItem = data.tender.items.id``.
 9. Из позиции в тендерном предложении находим код предмета закупки (``data.tender.items.classification.id``) а также количество закупаемых единиц ``data.tender.items.quantity``.
 10. Находим категорию для предмета закупки - первые 6 знаков в коде.
