@@ -77,9 +77,6 @@ KRAI13. Закупающая организация использует мет�
 
 - ``data.award.value.amount``
 - ``data.award.status``
-- ``parties.identifier.id``
-- ``parties.identifier.scheme``
-- ``parties.roles``
 
 
 Формула расчета
