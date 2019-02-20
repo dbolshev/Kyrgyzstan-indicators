@@ -44,6 +44,6 @@ tv_tenderCPVList
 ***************
 
 
-1. Для процедур, которые проведены одноэтапным, двухэтапным, упрощенным или методом на понижение цены: все значения ``data.tender.items.classification.id`` из объектов ``data.tender.items``, которые ссылаются только на лоты (``data.tender.items.relatedLot = data.tender.lots.id``), у которых ``data.tender.lots.status = 'complete'`` или ``data.tender.lots.status = 'active'``.
+Для процедур, которые проведены одноэтапным, двухэтапным, упрощенным, прямого заключения договора или методом на понижение цены: все значения ``data.tender.items.classification.id`` из объектов ``data.tender.items``, которые ссылаются только на лоты (``data.tender.items.relatedLot = data.tender.lots.id``), у которых ``data.tender.lots.status = 'complete'`` или ``data.tender.lots.status = 'active'``.
 
-2. Для процедур, которые проведены методом прямого заключения договора: все значения ``data.tender.items.classification.id`` из объектов ``data.tender.items``, которые ссылаются только на лоты (``data.tender.items.relatedLot = data.tender.lots.id``), у которых ``data.tender.lots.status = 'complete'``.
+
