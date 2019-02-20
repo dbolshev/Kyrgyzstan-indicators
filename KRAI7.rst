@@ -77,13 +77,8 @@ KRAI7. Закупка работ и услуг методом прямого з�
 - ``data.relatedProcesses.relationship``
 - ``data.tender.procurementMethodDetails``
 - ``data.relatedProcesses.identifier``
-- ``data.tender.items.classification.scheme``
-- ``data.tender.items.classification.id``
-- ``data.item.relatedLot``
-- ``data.awards.relatedLot``
-- ``data.awards.relatedBid``
-- ``data.bids.details.priceProposal.unit.value.amount``
-- ``data.bids.relatedLots.value.amount``
+- ``data.parties.id``
+- ``data.parties.roles``
 
 Для расчета используются следующие транзакционные переменные:
 
