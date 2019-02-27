@@ -57,7 +57,7 @@ tbl_CPVqualifRequir
 1. Перед расчетом таблица очищается.
 2. Выбираем только процедуры, у которых ``data.tender.procurementMethodDetails`` равны ``oneStage``, ``downgrade``, ``simplicated``. Из них выбираем процедуры, у которых ``data.tender.datePublished`` отстоят на год или менее от текущей даты.
 3. Выбираем только завершенные процедуры ``data.tender.status = 'complete'``.
-4. выбираем все коды предметов закупок (конкатенация ``data.tender.items.classification.scheme`` и ``data.tender.items.classification.id``).
+4. Выбираем все уникальные коды предметов закупок (конкатенация ``data.tender.items.classification.scheme`` и ``data.tender.items.classification.id``).
 5. Считаем количество квалификационных требований - элементов ``data.qualificationRequirements.id``.
 6. Для каждой процедуры всем предметам закупки ставим соответствие количество квалификационных требований.
 7. Группируем данные по предметам закупки, усредняя количество квалификационных требований.
