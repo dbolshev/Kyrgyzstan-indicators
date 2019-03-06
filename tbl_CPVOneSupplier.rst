@@ -68,7 +68,7 @@ tbl_CPVOneSupplier
 Формула расчета таблицы
 ***********************
 1. Перед расчетом таблица для текущего календарного года очищается. Таблицы, расчитанные для более ранних годов остаются без пересчета.
-2. Выбираем только те процедуры, у которых ``data.tender.procurementMethodRationale = 'annualProcurement'``. И только процедуры на поставку товаров. Из них выбираем только те процедуры, у которых ``data.tender.datePublished`` находится в текущем году.
+2. Выбираем только те процедуры, у которых ``data.tender.procurementMethodRationale = 'annualProcurement'``. И только процедуры на поставку товаров. Из них выбираем только те процедуры, у которых ``data.tender.datePublished`` находится в текущем году и которые имеют ``data.tender.status = 'complete'``.
 3. Находим идентификатор закупающей организации (конкатенация ``data.parties.identifier.scheme`` и ``data.parties.identifier.id``), такой, что ``data.parties.roles = 'buyer, procuringEntity'``.
 4. Определяем дату завершения процедуры ``data.tender.date``.
 5. Выбираем все объекты определения победителя, которые имеют ``data.awards.status = 'active'``.
