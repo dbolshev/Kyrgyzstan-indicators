@@ -75,11 +75,12 @@ KRAI29. Все участники лота были дисквалифициро
 Для расчета индикатора используются следующие поля API модуля системы гос. закупок:
 
 - ``data.tender.lots.id``
+- ``data.tender.lots.status``
 - ``data.bids.status``
 - ``data.bids.relatedLots.id``
 - ``data.awards.status``
 - ``data.awards.relatedLot``
-- ``data.lots.id``
+
 
 Качество данных
 ===============
@@ -89,7 +90,7 @@ KRAI29. Все участники лота были дисквалифициро
 Формула расчета
 ===============
 
-1. Для каждого лота ``data.tender.lots.id`` процедуры выбираем количество конкурсных заявок: объектов ``data.bids``, которые имеют ``data.bids.status = 'valid'`` и у которых ``data.bids.relatedLots.id = data.tender.lots.id`` нашего лота.
+1. Для каждого лота ``data.tender.lots.id``, у которого ``data.tender.lots.status = 'active'`` или ``data.tender.lots.status = 'complete'``, конкурса выбираем количество конкурсных заявок: объектов ``data.bids``, которые имеют ``data.bids.status = 'valid'`` и у которых ``data.bids.relatedLots.id = data.tender.lots.id`` нашего лота.
 
 2. Считаем количество таких завок для каждого лота.
 
