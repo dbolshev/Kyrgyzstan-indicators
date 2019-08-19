@@ -62,7 +62,7 @@ tbl_reportOneTime
 Формула расчета таблицы
 ***********************
 1. Перед расчетом таблица для текущего календарного года очищается. Таблицы, посчитанные для более ранних годов остаются неизменными.
-2. Выбираем только процедуры прямого заключения договора (``data.tender.procurementMethodDetails = 'singleSource'``), ``data.tender.procurementMethodRationale = 'annualProcurement'``, у которых ``data.tender.datePublished`` находится в текущем году и ``data.tender.status = 'complete'``.
+2. Выбираем только процедуры прямого заключения договора (``data.tender.procurementMethodDetails = 'singleSource'``), ``data.tender.procurementMethodRationale = 'annualProcurement'``, у которых ``data.tender.datePublished`` находится в текущем году и ``data.tender.status = 'complete'`` или ``data.tender.status = 'active'``.
 3. Из каждой найденной процедуры извлекаем идентификатор закупающей организации ``parties.id``, такой что ``parties.roles = 'buyer, procuringEntity'``.
 4. Извлекаем дату последнего изменения статуса процедуры ``data.tender.date``.
 5. Выбираем все значения классификаторов из текущей процедуры (``data.tender.items.classification.id``) только из тех лотов (``data.tender.items.relatedLot = data.tender.lots.id``), у которых ``data.tender.lots.status = 'complete'``.
