@@ -65,7 +65,7 @@ tbl_reportCPV
 2. Для расчета берем те процедуры, у которых ``data.tender.datePublished`` находится в текущем году.
 3. Из каждой найденной процедуры извлекаем идентификатор закупающей организации ``parties.id``, такой что ``parties.roles = 'buyer, procuringEntity'``.
 4. Извлекаем дату завершения процедуры ``data.tender.date``.
-5. Выбираем все значения классификаторов из текущей процедуры (``data.tender.items.classification.id``) только из тех лотов (``data.tender.items.relatedLot = data.tender.lots.id``), у которых ``data.tender.lots.status = 'complete'``.
+5. Выбираем все значения классификаторов из текущей процедуры (``data.tender.items.classification.id``) только из тех лотов (``data.tender.items.relatedLot = data.tender.lots.id``), у которых ``data.tender.lots.status = 'complete'`` или ``data.tender.lots.status = 'active'``.
 6. Группируем данные по идентификатору закупающей организации и предмету закупки, выбирая самую раннюю дату из пункта 4.
 7. Полученные данные вместе с годом расчета заносим в таблицу.
 
