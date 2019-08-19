@@ -62,7 +62,7 @@ tbl_CPVMeanPrice
 ***********************
 1. Выбираем процедуры за год до текущей даты. 
 2. Выбираем все процедуры, проведенные одноэтапным методом, упрощенным методом или методом на понижение, в статусе ``complete``, процедуры, которые находятся в статусе 'active', но при этом больше 30 дней имеют ``currentStage = 'evaluationComplete'``.
-3. Из каждой найденной процедуры извлекаем идентификаторы предметов закупки (``data.tender.items.classification.id``) и единицы измерения ``data.items.unit.id``. Предметы закупки выбираем только из таких лотов (``data.item.relatedLot = data.tender.lots.id``), которые имеют ``data.tender.lots.status = 'complete'``.
+3. Из каждой найденной процедуры извлекаем идентификаторы предметов закупки (``data.tender.items.classification.id``) и единицы измерения ``data.items.unit.id``. Предметы закупки выбираем только из таких лотов (``data.item.relatedLot = data.tender.lots.id``), которые имеют ``data.tender.lots.status = 'complete'`` или ``data.tender.lots.status = 'active'``.
 4. Для каждого предмета закупки проводим следующие действия.
     - Определяем идентификатор лота ``data.items.relatedLot``, к которому относится найденный ``data.items``.
     - Находим блок определения победителя, где ``data.awards.relatedLot = data.items.relatedLot`` и ``data.awards.status = 'active'``.
