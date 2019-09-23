@@ -7,11 +7,14 @@
 
    
    KRAI1
+   KRAI1_1
    KRAI2
    KRAI3
+   KRAI3_1
    KRAI4
    KRAI5
    KRAI6
+   KRAI6_1
    KRAI7
    KRAI8
    KRAI9
