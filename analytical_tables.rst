@@ -6,6 +6,7 @@
    :caption: Список аналитических таблиц:
 
   tbl_reportOneTime
+  tbl_reportOneTime_1
   tbl_reportCPV
   tbl_CPVByOpenTender
   tbl_CPVMeanPrice
