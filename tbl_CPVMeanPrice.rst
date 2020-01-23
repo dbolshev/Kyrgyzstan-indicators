@@ -68,7 +68,7 @@ tbl_CPVMeanPrice
     - Находим блок определения победителя, где ``data.awards.relatedLot = data.items.relatedLot`` и ``data.awards.status = 'active'``.
     - В найденном блоке определения победителя находим идентификатор победившего предложения ``data.awards.relatedBid``.
     - По найденному идентификатору находим выигравшее предложение ``data.awards.relatedBid = data.bids.details.id``.
-    - В выигравшем предложении в блоке ``data.bids.priceProposal`` находим цену единицы измерения предмета закупки ``data.bids.details.priceProposal.unit.value.amount``.
+    - В выигравшем предложении в блоке ``data.bids.priceProposal`` находим цену единицы измерения предмета закупки ``data.bids.details.priceProposal.unit.value.amount``. Используем только те, у которых ``data.bids.details.priceProposal.unit.value.amount`` > 0.
 5. Группируем полученные данные по коду предмета закупки (только если по данному коду закупки и единице измерения есть более 3-х записей) и единице измерения, выбирая среднее по цене выигрышного предложения. Также добавляем год, для которого расчитана таблица.
 6. Полученные результаты заносим в таблицу.
 
