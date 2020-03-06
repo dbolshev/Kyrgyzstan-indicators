@@ -66,19 +66,18 @@ NEW3. 2 и больше объявления закупок методом пр�
 
 Для расчета индикатора используются следующие поля API модуля системы гос. закупок:
 
-- ``data.parties.id``
-- ``data.bids.details.tenderers.id``
-- ``data.bids.details.status``
-- ``data.bids.details.relatedLots.id``
-- ``data.tender.lots.id``
-- ``data.tender.lots.status``
-- ``data.parties.id``
-- ``data.parties.additionalContactPoints.email``
-- ``data.parties.additionalContactPoints.telephone``
+- ``data.tender.procurementMethodRationale``
+- ``data.tender.procurementMethodDetails``
+- ``data.tender.tenderNumber``
+- ``data.relatedProcesses.tenderNumber``
 
 Для расчета используются следующие транзакционные переменные:
 
 - :ref:`tv_badDataQuality`
+
+Для расчета используется следующая аналитическая таблица:
+
+- :ref:`tbl_additionalProcurements`
 
 Качество данных
 ===============
