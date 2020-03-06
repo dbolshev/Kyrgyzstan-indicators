@@ -44,18 +44,16 @@ tbl_additionalProcurements
 Поля для расчета
 ****************
 
-
+- ``data.tender.procurementMethodRationale``
+- ``data.tender.procurementMethodDetails``
+- ``data.tender.tenderNumber``
+- ``data.tender.datePublished``
+- ``data.relatedProcesses.tenderNumber``
+- ``data.parties.id``
+- ``data.parties.roles``
 
 ***********************
 Формула расчета таблицы
 ***********************
 
-1. Перед расчетом таблица для текущего календарного очищается. Таблицы, расчитанные для более ранних годов остаются неизменными.
-2. Проводим расчеты отдельно для каждого календарного года, начиная с 2018-го.
-3. Выбираем только одноэтапные, упрощенные и процедуры методом на понижение цены, у которых ``data.tender.datePublished`` находится в текущем году.
-4. Выбираем только завершенные процедуры ``data.tender.status = 'complete'``.
-5. Из выбранных процедур выбираем все блоки определения победителя, где ``data.awards.status = 'active'``.
-6. Из блоков определения победителя выбираем идентификаторы лотов, к которым относятся эти блоки ``data.awards.relatedLot``.
-7. Находим все ``data.items``, которые относятся к этим лотам ``data.awards.relatedLot = data.items.relatedLot``.
-8. Выбираем все коды закупок (конкатенация ``data.tender.items.classification.scheme`` и ``data.tender.items.classification.id``) из найденных ``data.items``.
-9. Список из уникальных кодов закупок и год расчета заносим в таблицу.
+
