@@ -56,4 +56,20 @@ tbl_additionalProcurements
 Формула расчета таблицы
 ***********************
 
+1. Выбираем только закупки, у которых ``data.tender.procurementMethodRationale='additionalProcurement5'`` и у которых год из даты ``data.tender.datePublished`` равен текущему.
 
+2. Для каждой найденной закупки проводим следующие действия.
+
+3. Выбираем номер конкурса, на который ссылается закупающая организация ``data.relatedProcesses.tenderNumber``.
+
+4. Из найденного номера удаляем все символы, кроме цифр.
+
+5. В системе госзакупок находим конкурс с таким номером ``data.tender.tenderNumber=data.relatedProcesses.tenderNumber``.
+
+6. Если по номеру конкурс найти не удалось, работа с этой закупкой заканчивается.
+
+7. Если конкурс найден, то смотрим его тип ``data.tender.procurementMethodDetails``. Если ``data.tender.procurementMethodDetails='singleSource'``, работа с этой закупкой заканчивается.
+
+8. Выбиреам идентификатор закупающей организации - ``data.parties.id``, где ``data.parties.roles='buyer'``.
+
+9. Идентификатор закупающей организации и номер найденного конкурса записываем как строку в таблицу.
