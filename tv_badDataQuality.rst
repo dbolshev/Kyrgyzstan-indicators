@@ -34,10 +34,15 @@ tv_badDataQuality
 Поля для расчета
 ****************
 
-- ``data.tag``
+- ``data.tender.statusDetails``
+- ``data.tender``
+- ``data.tender.lots``
+- ``data.bids``
+- ``data.awards``
 
 ***************
 Формула расчета
 ***************
 
-Если в массиве ``data.tag`` присутствуют значения ``tender``, ``bidsFullOpening``, ``award`` переменная принимает значение ``false``. Если хотя бы одно из перечисленных значений отсутствует, переменная принимает значение ``true``.
+Переменная рассчитывается для конкурсов, которы находzтся в статусе ``data.tender.statusDetails='evaluationComplete'`` и ``data.tender.statusDetails='contractSigned'``.
+Если в конкурсе присутствуют блоки``data.tender``, ``data.tender.lots``, ``data.bids``, ``data.awards`` переменная принимает значение ``false``. Если хотя бы одно из перечисленных значений отсутствует, переменная принимает значение ``true``.
