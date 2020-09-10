@@ -82,7 +82,7 @@ KRAI8. Дозакупка работ или услуг методом прямо
 Формула расчета
 ===============
 
-1. Выбираем только процедуры, у которых ``data.tender.procurementMethodRationale = 'additionalProcurement25'``.
+1. Выбираем только процедуры, у которых ``data.tender.procurementMethodRationale = 'additionalProcurement5'``.
 
 2. Если в процедуре отсутствует контейнер ``data.relatedProcesses``, индикатор принимает значение ``1``. Расчет заканчивается.
 
