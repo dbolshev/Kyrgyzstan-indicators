@@ -36,6 +36,7 @@ tv_badDataQuality
 
 - ``data.tender.statusDetails``
 - ``data.tender``
+- ``data.tender.lots.status``
 - ``data.tender.lots``
 - ``data.bids``
 - ``data.awards``
@@ -45,5 +46,13 @@ tv_badDataQuality
 Формула расчета
 ***************
 
-Переменная рассчитывается для конкурсов, которы находятся в статусе ``data.tender.statusDetails='evaluationComplete'`` и ``data.tender.statusDetails='contractSigned'``.
-Если в конкурсе присутствуют блоки``data.tender``, ``data.tender.lots``, ``data.bids``, ``data.awards``, ``data.contracts`` переменная принимает значение ``false``. Если хотя бы одно из перечисленных значений отсутствует, переменная принимает значение ``true``.
+1. Если статус конкурса ``data.tender.status='active'``, но все лоты конкурса имеют статус ``data.tender.lots.status='cancelled'`` или ``data.tender.lots.status='unsuccessful'``, переменная принимает значение ``1``, расчет заканчивается.
+
+2. Переменная принимает значение ``1`` в одном из следующих случаев.
+2.1. Если в конкурсе отсутствует ``data.tender``, ``data.tender.lots``.
+2.2. Если стадия конкурса ``data.tender.statusDetails`` равна ``bidsOpened``, ``evaluationResultsPending``, ``evaluationComplete``, ``contractSigned`` и при этом  в конкурсе отсутствует блок ``data.bids``.
+2.3. Если стадия конкурса ``data.tender.statusDetails`` равна ``evaluationResultsPending``, ``evaluationComplete``, ``contractSigned`` и при этом  в конкурсе отсутствует блок ``data.awards``.
+
+3. При обновлении данных тендера, собираем список уже существующих в нем блоков: ``data.tender.items``, ``data.tender.lots``, ``data.bids``, ``data.awards``, ``data.contracts``. Если хоть один из блоков находится в списке существующих, но отсутствует в обновлении, переменная принимает значение ``1``.
+
+4. Если мы дошли до этого пункта, переменная принимает значение ``0``, расчет заканчивается.
